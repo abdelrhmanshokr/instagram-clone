@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+
     use Notifiable;
 
     /**
@@ -36,4 +37,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //to link the use model to the profile model 
+    public function profile(){
+        return $this->belongsTo(Profile::class);
+    }
 }
