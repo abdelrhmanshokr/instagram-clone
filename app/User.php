@@ -40,6 +40,11 @@ class User extends Authenticatable
 
     //to link the use model to the profile model 
     public function profile(){
-        return $this->belongsTo(Profile::class);
+        return $this->hasOne(Profile::class);
+    }
+
+    //to link the user with the post model a one to many relation 
+    public function posts(){
+        return $this->hasMany(Post::class);
     }
 }

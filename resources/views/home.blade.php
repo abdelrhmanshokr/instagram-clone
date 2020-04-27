@@ -8,8 +8,9 @@
             <img src="https://instagram.fcai3-2.fna.fbcdn.net/v/t51.2885-19/s320x320/61265210_414150962768513_8817720884077789184_n.jpg?_nc_ht=instagram.fcai3-2.fna.fbcdn.net&_nc_ohc=UCTkIm3QtNAAX_7-kTZ&oh=686fe8d60a51e8dc65ab9c37c039e4ee&oe=5EC68603" alt="image" class="rounded-circle img-fluid">
        </div>
        <div class="col-9 pt-5">
-            <div class="d-flex">
-                <h1>{{Auth::user()->username}}</h1>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h1>{{$user->username}}</h1>
+                <a href="#">add a new post</a>
             </div>
             <div class="d-flex">
                 <div class="pr-5"><strong>100</strong> posts </div>
@@ -17,13 +18,13 @@
                 <div class="pr-5"><strong>150</strong> following </div>
             </div>
             <div class="pt-4 font-weight-bold">
-                name
+                {{$user->profile->title}}
             </div>
             <div>
-                eque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+                {{$user->profile->description}}
             </div>
             <div>
-                <a href="#">It is a long esta</a>
+                <a href="#">{{$user->profile->url ?? 'not available'}}</a>
             </div>
        </div>
    </div>
